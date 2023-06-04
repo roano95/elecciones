@@ -2262,7 +2262,7 @@ public class Opciones extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-int contador = 0;
+    int contador = 0;
     int suma = 0;
     
  
@@ -2366,10 +2366,11 @@ int contador = 0;
     }//GEN-LAST:event_jButton3ActionPerformed
     
     public void listarAlumnos(JTable tabla) {
-    
+        AlumnoDAOImpl alumnoDAO = new AlumnoDAOImpl();
         DefaultTableModel model;
         String[] titulo = { "NOMBRE", "APELLIDO PATERNO", "APELLIDO MATERNO", "FECHA NACIMIENTO", "CURP", "EDITAR"};
         model = new DefaultTableModel(null, titulo);
+        List<Alumno> datos = alumnoDAO.listPreinscripcion();
         System.out.println("qeu entra ");
         String[] datosAlumno = new String[7];
         for (Alumno alum : datos) {
